@@ -19,9 +19,9 @@ $cpf = preg_replace("/[^0-9]/", "", $cpf);
 //echo "email: $email";
 
 if($busca == '0'){
-$result_usuario = "INSERT INTO funcionarios(Nome, Email, Cpf, DataNascimento) VALUES ('$nome', '$email', '$cpf', '$dataNascimento')";
+$stmt = "INSERT INTO funcionarios(Nome, Email, Cpf, DataNascimento) VALUES ('$nome', '$email', '$cpf', '$dataNascimento')";
 
-$result_usuario= mysqli_query($conn, $result_usuario);
+$resultSet= mysqli_query($conn, $stmt);
 
 if(mysqli_insert_id($conn)){
     $_SESSION['msg']  = "<p style='color:blue'>  Funcionario Cadastrado! </p>" ;
